@@ -12,12 +12,12 @@ const questions = [
     question02 = {
         type: 'input',
         name: 'description',
-        message: 'Provide a description of your project. Include the what, why, and how of your project.',
+        message: 'Provide a description of your project.',
     },
     question03 = {
         type: 'input',
         name: 'install',
-        message: 'If applicable, provide a description of the steps required to install and run the application/project.',
+        message: 'Provide a description of the steps required to install and/or run the application/project.',
     },
     question04 = {
         type: 'input',
