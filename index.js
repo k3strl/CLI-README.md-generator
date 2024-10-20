@@ -1,45 +1,52 @@
 // Include packages needed for this application
 import inquirer from 'inquirer';
-import fs from 'fs';
 
 // Create an array of questions for user input
 const questions = [
-    question01 = { 
+    // Prompt for the project title
+    { 
         type: 'input',
         name: 'title',
         message: 'Provide a title for your project.',
     },
-    question02 = {
+    // Prompt for the project description
+    {
         type: 'input',
         name: 'description',
         message: 'Provide a description of your project.',
     },
-    question03 = {
+    // Prompt for installation instructions
+    {
         type: 'input',
         name: 'install',
         message: 'Provide a description of the steps required to install and/or run the application/project.',
     },
-    question04 = {
+    // Prompt for usage instructions
+    {
         type: 'input',
         name: 'use',
         message: 'Provide instructions for use.',
     },    
-    question05 = {
+    // Prompt for contribution guidelines
+    {
         type: 'input',
         name: 'contribute',
         message: 'If applicable, explain how other developers can contribute to the project.',
     },
-    question06 = {
+    // Prompt for test instructions
+    {
         type: 'input',
         name: 'test',
         message: 'Provide instructions for testing your project.',
     },
+    // Prompt
     question07 = {
         type: 'input',
         name: 'credits',
         message: 'List any collaborators, third-party assets, or tutorials used.',
     },
-    question08 = {
+    // Prompt for license information
+    {
         type: 'input',
         name: 'license',
         message: 'Provide the license for the project.',
