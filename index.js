@@ -1,5 +1,6 @@
 // Include packages needed for this application
 import inquirer from 'inquirer';
+import fs from 'fs';
 
 // Create an array of questions for user input
 const questions = [
@@ -31,21 +32,21 @@ const questions = [
     {
         type: 'input',
         name: 'contribute',
-        message: 'If applicable, explain how other developers can contribute to the project.',
+        message: 'Explain how other developers can contribute to the project.',
     },
-    // Prompt for test instructions
+    // Prompt for testing instructions
     {
         type: 'input',
         name: 'test',
         message: 'Provide instructions for testing your project.',
     },
-    // Prompt
-    question07 = {
+    // Prompt for credits
+    {
         type: 'input',
         name: 'credits',
         message: 'List any collaborators, third-party assets, or tutorials used.',
     },
-    // Prompt for license information
+    // Prompt for license
     {
         type: 'input',
         name: 'license',
@@ -55,14 +56,18 @@ const questions = [
 
 // Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', data, (err) => {
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
         err ? console.error(err) : console.log('README.md created!');
     });
 }
 
 // TODO: Create a function to initialize app
 function init() {
-
+    inquirer.prompt(questions)
+        .then((data) => {
+            console.log(data);
+            writeToFile('README.md', data);
+        });
 };
 
 // Function call to initialize app
