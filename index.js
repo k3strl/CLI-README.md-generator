@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     question01 = { 
         type: 'input',
@@ -46,10 +46,12 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(fileName, data) {
-    
-};
+    fs.writeFile('README.md', data, (err) => {
+        err ? console.error(err) : console.log('README.md created!');
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
