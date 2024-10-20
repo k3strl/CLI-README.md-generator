@@ -37,7 +37,7 @@ const questions = [
     // Prompt for testing instructions
     {
         type: 'input',
-        name: 'test',
+        name: 'tests',
         message: 'Provide instructions for testing your project.',
     },
     // Prompt for credits
@@ -69,6 +69,56 @@ function init() {
             writeToFile('README.md', data);
         });
 };
+
+// TODO: create markdown template
+const = template`# ${data.title}
+
+## Description
+
+${data.description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+- [How to Contribute](#how-to-contribute)
+- [Tests](#tests)
+
+## Installation
+
+${data.install}
+
+## Usage
+
+${response.use}
+
+## Credits
+
+${response.credits}
+
+## License
+
+${response.license}
+
+## Badges
+
+${response.badges}
+
+## Features
+
+${response.features}
+
+## How to Contribute
+
+${response.contribute}
+
+## Tests
+
+${response.tests}`
 
 // Function call to initialize app
 init();
