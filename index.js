@@ -70,15 +70,13 @@ function init() {
         });
 };
 
-// TODO: create markdown template
+// create markdown template
 const = template`# ${data.title}
 
 ## Description
-
 ${data.description}
 
 ## Table of Contents
-
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -89,35 +87,27 @@ ${data.description}
 - [Tests](#tests)
 
 ## Installation
-
 ${data.install}
 
 ## Usage
-
 ${response.use}
 
 ## Credits
-
 ${response.credits}
 
 ## License
-
 ${response.license}
 
 ## Badges
-
 ${response.badges}
 
 ## Features
-
 ${response.features}
 
 ## How to Contribute
-
 ${response.contribute}
 
 ## Tests
-
 ${response.tests}`
 
 // Function call to initialize app
