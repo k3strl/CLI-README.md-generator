@@ -64,4 +64,4 @@ function generateMarkdown(data)
   ${data.tests}`
 };
 
-export default generateMarkdown;g
+export default generateMarkdown;
