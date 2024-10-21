@@ -46,6 +46,14 @@ const questions =
         type: 'input',
         name: 'license',
         message: 'Provide the license for the project.',
+        choices: 
+        [
+            'MIT',
+            'GNU GPLv3',
+            'GNU LGPLv3',
+            'Apache 2.0',
+            'Mozilla Public License 2.0'
+        ],
     },
     // Prompt for credits
     {
@@ -78,7 +86,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, " "));
-        data.getLicense = getLicense(data.license);
+        data.renderLicense = renderLicense(data.license);
         writeToFile("./README.md", data);
     });
 }
