@@ -18,3 +18,46 @@ function generateMarkdown(data) {
 }
 
 export default generateMarkdown;
+
+
+// ! README.md template here! Move this as req'd
+// README.md template
+
+// const = template`# ${data.title}
+
+// ## Description
+// ${data.description}
+
+// ## Table of Contents
+// - [Installation](#installation)
+// - [Usage](#usage)
+// - [Credits](#credits)
+// - [License](#license)
+// - [Badges](#badges)
+// - [Features](#features)
+// - [How to Contribute](#how-to-contribute)
+// - [Tests](#tests)
+
+// ## Installation
+// ${data.install}
+
+// ## Usage
+// ${response.use}
+
+// ## Credits
+// ${response.credits}
+
+// ## License
+// ${response.license}
+
+// ## Badges
+// ${response.badges}
+
+// ## Features
+// ${response.features}
+
+// ## How to Contribute
+// ${response.contribute}
+
+// ## Tests
+// ${response.tests}`
