@@ -2,9 +2,6 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-
-//prompt user for input
-
 // Create an array of questions for user input
 const questions = 
     [
@@ -70,14 +67,14 @@ const questions =
     }
 ];
 
-// Create a function to write README file
+// writeToFile function
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
-        err ? console.error(err) : console.log('README.md created!');
+        err ? console.error(err) : console.log('README.md created successfully!');
     });
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, " "));
@@ -85,7 +82,6 @@ function init() {
         writeToFile("./README.md", data);
     });
 }
-
 
 // Function call to initialize app
 init();

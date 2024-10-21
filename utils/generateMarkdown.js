@@ -1,5 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
+//if/else statement 
 function renderLicenseBadge(license) {}
 
 // TODO: Create a function that returns the license link
@@ -10,54 +12,47 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+// Create a function to generate markdown for README
+function generateMarkdown(data) 
+{
   return `# ${data.title}
 
-`;
-}
+## Description
+${data.description}
 
-export default generateMarkdown;
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+- [How to Contribute](#how-to-contribute)
+- [Tests](#tests)
 
+## Installation
+${data.install}
 
-// ! README.md template here! Move this as req'd
-// README.md template
+## Usage
+${data.use}
 
-// const = template`# ${data.title}
+## Credits
+${data.credits}
 
-// ## Description
-// ${data.description}
+## License
+${data.license}
 
-// ## Table of Contents
-// - [Installation](#installation)
-// - [Usage](#usage)
-// - [Credits](#credits)
-// - [License](#license)
-// - [Badges](#badges)
-// - [Features](#features)
-// - [How to Contribute](#how-to-contribute)
-// - [Tests](#tests)
+## Badges
+${data.badges}
 
-// ## Installation
-// ${data.install}
+## Features
+${data.features}
 
-// ## Usage
-// ${response.use}
+## How to Contribute
+${data.contribute}
 
-// ## Credits
-// ${response.credits}
+## Tests
+${data.tests}`
+};
 
-// ## License
-// ${response.license}
-
-// ## Badges
-// ${response.badges}
-
-// ## Features
-// ${response.features}
-
-// ## How to Contribute
-// ${response.contribute}
-
-// ## Tests
-// ${response.tests}`
+export default generateMarkdown;g
