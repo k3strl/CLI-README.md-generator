@@ -56,32 +56,17 @@ function renderLicenseLink(license)
 
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
-//TODO: Cleanup & refactor, should do what i need it to but it can be shortened
-function renderLicenseSection(license)
-{
-  let licenseSection;
-  if (license === 'Apache 2.0')
-  {
-    licenseSection = `This project is licensed under the ${license} license.`;
+const renderLicenseSection = (license) => {
+  switch (license) {
+    case 'Apache 2.0':
+    case 'GNU GPL v3':
+    case 'MIT':
+    case 'Mozilla Public License 2.0':
+      return `This project is licensed under the ${license} license.`;
+    default:
+      return '';
   }
-  else if (license = 'GNU GPL v3')
-  {
-    licenseSection = `This project is licensed under the ${license} license.`;
-  }
-  else if (license = 'MIT')
-  {
-    licenseSection = `This project is licensed under the ${license} license.`;
-  }
-  else if (license = 'Mozilla Public License 2.0')
-  {
-    licenseSection = `This project is licensed under the ${license} license.`;
-  }
-  else
-  {
-    licenseSection = '';
-  }
-  return licenseSection;
-}
+};
 
 // Create a function to generate markdown for README
 function generateMarkdown(data) 
@@ -90,7 +75,7 @@ function generateMarkdown(data)
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
-  ${data.renderLicenseBadge}
+  ${LicenseBadge}
 
   ## Description
   ${data.description}
@@ -115,7 +100,7 @@ function generateMarkdown(data)
   ${data.credits}
 
   ## License
-  ${data.license}
+  ${licenseSection}
 
   ## Features
   ${data.features}
