@@ -44,9 +44,9 @@ function renderLicenseSection(license)
 // Create a function to generate markdown for README
 function generateMarkdown(data) 
 {
-  const licenseBadge = '';
-  const licenseLink = '';
-  const licenseSection = '';
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseLink = renderLicenseLink(data.license);
+  const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
   ${data.renderLicenseBadge}
 
