@@ -2,61 +2,91 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-// Create an array of questions for user input
-const questions = [
-    question01 = { 
-        type: 'input',
-        name: 'title',
-        message: 'Provide a title for your project.',
-    },
-    question02 = {
-        type: 'input',
-        name: 'description',
-        message: 'Provide a description of your project.',
-    },
-    question03 = {
-        type: 'input',
-        name: 'install',
-        message: 'Provide a description of the steps required to install and/or run the application/project.',
-    },
-    question04 = {
-        type: 'input',
-        name: 'use',
-        message: 'Provide instructions for use.',
-    },    
-    question05 = {
-        type: 'input',
-        name: 'contribute',
-        message: 'If applicable, explain how other developers can contribute to the project.',
-    },
-    question06 = {
-        type: 'input',
-        name: 'test',
-        message: 'Provide instructions for testing your project.',
-    },
-    question07 = {
-        type: 'input',
-        name: 'credits',
-        message: 'List any collaborators, third-party assets, or tutorials used.',
-    },
-    question08 = {
-        type: 'input',
-        name: 'license',
-        message: 'Provide the license for the project.',
-    },
-];
+
+//prompt user for input
+inquirer
+    .prompt(
+    // Create an array of questions for user input
+    const questions = 
+        [
+        // Prompt for the project title
+        { 
+            type: 'input',
+            name: 'title',
+            message: 'Provide a title for your project.',
+        },
+        // Prompt for the project description
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Provide a description of your project.',
+        },
+        // Prompt for installation instructions
+        {
+            type: 'input',
+            name: 'install',
+            message: 'Provide a description of the steps required to install and/or run the application/project.',
+        },
+        // Prompt for usage instructions
+        {
+            type: 'input',
+            name: 'use',
+            message: 'Provide instructions for use.',
+        },    
+        // Prompt for contribution guidelines
+        {
+            type: 'input',
+            name: 'contribute',
+            message: 'Explain how other developers can contribute to the project.',
+        },
+        // Prompt for testing instructions
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Provide instructions for testing your project.',
+        },
+        // Prompt for license
+        {
+            type: 'input',
+            name: 'license',
+            message: 'Provide the license for the project.',
+        },
+        // Prompt for credits
+        {
+            type: 'input',
+            name: 'credits',
+            message: 'List any collaborators, third-party assets, or tutorials used.',
+        },
+        // Prompt for github username
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Provide your GitHub username.',
+        },
+        // Prompt for email address
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Provide an email address for questions about the project.',
+        }
+    ]);
 
 // Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', data, (err) => {
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
         err ? console.error(err) : console.log('README.md created!');
     });
 }
 
 // TODO: Create a function to initialize app
 function init() {
+    inquirer.prompt(questions).then((data) => {
+        console.log(JSON.stringify(data, null, " "));
+        data.getLicense = getLicense(data.license);
+        writeToFile("./README.md", data);
+    });
+}
 
-};
 
 // Function call to initialize app
 init();
