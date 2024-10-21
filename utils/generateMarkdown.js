@@ -51,9 +51,6 @@ function generateMarkdown(data)
   ## License
   ${data.license}
 
-  ## Badges
-  ${data.badges}
-
   ## Features
   ${data.features}
 
