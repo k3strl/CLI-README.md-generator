@@ -1,6 +1,7 @@
 // Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
+import generateMarkdown from './utils/generateMarkdown.js';
 
 // Create an array of questions for user input
 const questions = 
@@ -84,9 +85,10 @@ function writeToFile(fileName, data) {
 // Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        console.log(JSON.stringify(data, null, " "));
-        data.renderLicense = renderLicense(data.license);
-        writeToFile("./README.md", data);
+        console.log(JSON.stringify(data, null, ' '));
+        //!~HELP
+        // data.renderLicenseBadge = renderLicenseBadge(data.license);
+        writeToFile('./README.md', data);
     });
 }
 

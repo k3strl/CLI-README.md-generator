@@ -1,7 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 
-//if/else statement 
 function renderLicenseBadge(license)
 {
   let licenseBadge;
@@ -27,18 +26,61 @@ function renderLicenseBadge(license)
   return licenseBadge;
 }
 
-// TODO: Create a function that returns the license link
+// Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) 
 {
   let licenseLink;
+  if (license === 'Apache 2.0')
+  {
+    licenseLink = `[Apache 2.0](https://opensource.org/licenses/Apache-2.0)`;
+  }
+  else if (license === 'GNU GPL v3')
+  {
+    licenseLink = `[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)`;
+  }
+  else if (license === 'MIT')
+  {
+    licenseLink = `[MIT](https://opensource.org/licenses/MIT)`;
+  }
+  else if (license === 'Mozilla Public License 2.0')
+  {
+    licenseLink = `[Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)`;
+  }
+  else 
+  {
+    license = '';
+  }
+  return licenseLink;
 }
 
-// TODO: Create a function that returns the license section of README
+// Create a function that returns the license section of README
 // If there is no license, return an empty string
+//TODO: Cleanup & refactor, should do what i need it to but it can be shortened
 function renderLicenseSection(license)
 {
   let licenseSection;
+  if (license === 'Apache 2.0')
+  {
+    licenseSection = `This project is licensed under the ${license} license.`;
+  }
+  else if (license = 'GNU GPL v3')
+  {
+    licenseSection = `This project is licensed under the ${license} license.`;
+  }
+  else if (license = 'MIT')
+  {
+    licenseSection = `This project is licensed under the ${license} license.`;
+  }
+  else if (license = 'Mozilla Public License 2.0')
+  {
+    licenseSection = `This project is licensed under the ${license} license.`;
+  }
+  else
+  {
+    licenseSection = '';
+  }
+  return licenseSection;
 }
 
 // Create a function to generate markdown for README
