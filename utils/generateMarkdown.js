@@ -1,7 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 
-//if/else statement 
 function renderLicenseBadge(license)
 {
   let licenseBadge;
@@ -27,28 +26,56 @@ function renderLicenseBadge(license)
   return licenseBadge;
 }
 
-// TODO: Create a function that returns the license link
+// Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) 
 {
   let licenseLink;
+  if (license === 'Apache 2.0')
+  {
+    licenseLink = `[Apache 2.0](https://opensource.org/licenses/Apache-2.0)`;
+  }
+  else if (license === 'GNU GPL v3')
+  {
+    licenseLink = `[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)`;
+  }
+  else if (license === 'MIT')
+  {
+    licenseLink = `[MIT](https://opensource.org/licenses/MIT)`;
+  }
+  else if (license === 'Mozilla Public License 2.0')
+  {
+    licenseLink = `[Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)`;
+  }
+  else 
+  {
+    license = 'No license selected.';
+  }
+  return licenseLink;
 }
 
-// TODO: Create a function that returns the license section of README
+// Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license)
-{
-  let licenseSection;
-}
+const renderLicenseSection = (license) => {
+  switch (license) {
+    case 'Apache 2.0':
+    case 'GNU GPL v3':
+    case 'MIT':
+    case 'Mozilla Public License 2.0':
+      return `This project is licensed under the ${license} license.`;
+    default:
+      return '';
+  }
+};
 
 // Create a function to generate markdown for README
 function generateMarkdown(data) 
 {
-  const licenseBadge = '';
-  const licenseLink = '';
-  const licenseSection = '';
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseLink = renderLicenseLink(data.license);
+  const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
-  ${data.renderLicenseBadge}
+  ${licenseBadge}
 
   ## Description
   ${data.description}
@@ -73,10 +100,7 @@ function generateMarkdown(data)
   ${data.credits}
 
   ## License
-  ${data.license}
-
-  ## Features
-  ${data.features}
+  ${licenseSection}
 
   ## How to Contribute
   ${data.contribute}
