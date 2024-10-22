@@ -102,8 +102,6 @@ const questions =
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
         err ? console.error(err) : console.log('README.md created successfully!');
-        console.log('data', data);
-        console.log(license);
     });
 }
 
