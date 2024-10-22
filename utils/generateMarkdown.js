@@ -63,7 +63,7 @@ const renderLicenseSection = (license, licenseBadge, licenseLink) => {
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
   const licenseLink = renderLicenseLink(data.license);
-  const licenseSection = renderLicenseSection(data.license);
+  const licenseSection = renderLicenseSection(data.license, licenseBadge, licenseLink);
 
   console.log('Final destination', licenseBadge, licenseLink, licenseSection);
 
