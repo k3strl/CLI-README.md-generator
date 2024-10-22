@@ -1,8 +1,8 @@
-# Title
+# title
   
 
   ## Description
-  Desc
+  test
 
   ## Table of Contents
   - [Installation](#installation)
@@ -15,25 +15,26 @@
   - [Email](#email)
 
   ## Installation
-  1 2 3
+  test
 
   ## Usage
-  1 2 3
+  test
 
   ## Credits
-  none
+  test
 
   ## License
   
+  This project is licensed under the [mit]().
 
   ## How to Contribute
   test
 
   ## Tests
   test
-  
+
   ## GitHub
-  [GitHub](Github.com/k3strl)
+  [GitHub](https://github.com/test)
 
   ## Email
-  nunya@business.com
+  test

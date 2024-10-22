@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
-import renderLicenseBadge from './utils/generateMarkdown.js';
+// import renderLicenseBadge from './utils/generateMarkdown.js';
 import license from './utils/generateMarkdown.js';
 
 // Create an array of questions for user input
@@ -51,7 +51,7 @@ const questions =
                 description: '',
             },
             {
-                name: 'GPL v3',
+                name: 'GNU GPL v3',
                 value: 'gplv3',
                 description: '',
             },
@@ -110,8 +110,7 @@ function writeToFile(fileName, data) {
 // Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        console.log(JSON.stringify(data, null, ' '));
-        data.renderLicenseBadge = renderLicenseBadge(data.license);
+        console.log(JSON.stringify(data, ' '));
         writeToFile('./README.md', data);
     });
 }
