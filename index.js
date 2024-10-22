@@ -40,34 +40,34 @@ const questions =
     },
     // Prompt for license 
     {
-        type: 'rawlist',
+        type: 'list',
         name: 'license',
         message: 'Choose the license for the project.',
         choices:
         [ 
             {
                 name: 'Apache 2.0',
-                value: 'apache',
+                value: 'Apache 2.0',
                 description: '',
             },
             {
                 name: 'GNU GPL v3',
-                value: 'gplv3',
+                value: 'GNU GPL v3',
                 description: '',
             },
             {
                 name: 'MIT',
-                value: 'mit',
+                value: 'MIT',
                 description: '',
             },
             {
                 name: 'Mozilla Public License 2.0',
-                value: 'mozilla',
+                value: 'Mozilla Public License 2.0',
                 description: '',
             },
             {
                 name: 'None',
-                value: 'none',
+                value: 'None',
                 description: '',
             },
         ]
@@ -102,17 +102,15 @@ const questions =
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
         err ? console.error(err) : console.log('README.md created successfully!');
-        console.log('data', data);
-        console.log(license);
     });
 }
 
 // Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((data) => {
-        console.log(JSON.stringify(data, ' '));
-        writeToFile('./README.md', data);
-    });
+  inquirer.prompt(questions).then((data) => {
+      console.log(JSON.stringify(data, null, 2)); // Improved formatting for better readability
+      writeToFile('./README.md', data);
+  });
 }
 
 // Function call to initialize app

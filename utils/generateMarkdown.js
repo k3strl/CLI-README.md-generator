@@ -37,18 +37,18 @@ function renderLicenseLink(license) {
 
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = (license) => {
+const renderLicenseSection = (license, licenseBadge, licenseLink) => {
   switch (license) {
     case 'Apache 2.0':
-      return `This project is licensed under the Apache 2.0 license.`;
+      return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
     case 'GNU GPL v3':
-      return `This project is licensed under the GNU GPL v3 license.`;
+      return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
     case 'MIT':
-      return `This project is licensed under the MIT license.`;
+      return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
     case 'Mozilla Public License 2.0':
-      return `This project is licensed under the Mozilla Public License 2.0.`;
+      return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
     default:
-      return ''; // No license provided
+      return ' '; // No license provided
   }
 };
 
@@ -84,8 +84,7 @@ function generateMarkdown(data) {
   ${data.credits}
 
   ## License
-  ${licenseBadge}
-  This project is licensed under the [${data.license}](${licenseLink}) license.
+  ${licenseSection}
 
   ## How to Contribute
   ${data.contribute}
