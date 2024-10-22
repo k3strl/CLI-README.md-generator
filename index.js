@@ -3,7 +3,7 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 import renderLicenseBadge from './utils/generateMarkdown.js';
-import renderLicenseLink from './utils/generateMarkdown.js';
+import license from './utils/generateMarkdown.js';
 
 // Create an array of questions for user input
 const questions = 
@@ -32,19 +32,13 @@ const questions =
         name: 'use',
         message: 'Provide instructions for use.',
     },    
-    // Prompt for contribution guidelines
+    // Prompt for credits
     {
         type: 'input',
-        name: 'contribute',
-        message: 'Explain how other developers can contribute to the project.',
+        name: 'credits',
+        message: 'List any collaborators, third-party assets, or tutorials used.',
     },
-    // Prompt for testing instructions
-    {
-        type: 'input',
-        name: 'tests',
-        message: 'Provide instructions for testing your project.',
-    },
-    // Prompt for license
+    // Prompt for license 
     {
         type: 'rawlist',
         name: 'license',
@@ -78,11 +72,17 @@ const questions =
             },
         ]
     },
-    // Prompt for credits
+    // Prompt for contribution guidelines
     {
         type: 'input',
-        name: 'credits',
-        message: 'List any collaborators, third-party assets, or tutorials used.',
+        name: 'contribute',
+        message: 'Explain how other developers can contribute to the project.',
+    },
+    // Prompt for testing instructions
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Provide instructions for testing your project.',
     },
     // Prompt for github username
     {
@@ -101,7 +101,9 @@ const questions =
 // writeToFile function
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
-        err ? console.error(err) : console.log('SAMPLE.md created successfully!');
+        err ? console.error(err) : console.log('README.md created successfully!');
+        console.log('data', data);
+        console.log(license);
     });
 }
 
@@ -110,7 +112,7 @@ function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, ' '));
         data.renderLicenseBadge = renderLicenseBadge(data.license);
-        writeToFile('./SAMPLE.md', data);
+        writeToFile('./README.md', data);
     });
 }
 
