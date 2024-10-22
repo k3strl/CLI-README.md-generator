@@ -2,6 +2,8 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
+import renderLicenseBadge from './utils/generateMarkdown.js';
+import renderLicenseLink from './utils/generateMarkdown.js';
 
 // Create an array of questions for user input
 const questions = 
@@ -44,16 +46,37 @@ const questions =
     },
     // Prompt for license
     {
-        type: 'input',
+        type: 'rawlist',
         name: 'license',
-        message: 'Provide the license for the project.',
-        choices: 
-        [
-            'MIT',
-            'GNU GPL v3',
-            'Apache 2.0',
-            'Mozilla Public License 2.0'
-        ],
+        message: 'Choose the license for the project.',
+        choices:
+        [ 
+            {
+                name: 'Apache 2.0',
+                value: 'apache',
+                description: '',
+            },
+            {
+                name: 'GPL v3',
+                value: 'gplv3',
+                description: '',
+            },
+            {
+                name: 'MIT',
+                value: 'mit',
+                description: '',
+            },
+            {
+                name: 'Mozilla Public License 2.0',
+                value: 'mozilla',
+                description: '',
+            },
+            {
+                name: 'None',
+                value: 'none',
+                description: '',
+            },
+        ]
     },
     // Prompt for credits
     {
@@ -78,7 +101,7 @@ const questions =
 // writeToFile function
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
-        err ? console.error(err) : console.log('README.md created successfully!');
+        err ? console.error(err) : console.log('SAMPLE.md created successfully!');
     });
 }
 
@@ -86,9 +109,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, ' '));
-        //!~HELP
-        // data.renderLicenseBadge = renderLicenseBadge(data.license);
-        writeToFile('./README.md', data);
+        data.renderLicenseBadge = renderLicenseBadge(data.license);
+        writeToFile('./SAMPLE.md', data);
     });
 }
 

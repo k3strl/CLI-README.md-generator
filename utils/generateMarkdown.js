@@ -49,7 +49,7 @@ function renderLicenseLink(license)
   }
   else 
   {
-    license = '';
+    license = 'No license selected.';
   }
   return licenseLink;
 }
@@ -75,7 +75,7 @@ function generateMarkdown(data)
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
-  ${LicenseBadge}
+  ${licenseBadge}
 
   ## Description
   ${data.description}
@@ -101,9 +101,6 @@ function generateMarkdown(data)
 
   ## License
   ${licenseSection}
-
-  ## Features
-  ${data.features}
 
   ## How to Contribute
   ${data.contribute}
