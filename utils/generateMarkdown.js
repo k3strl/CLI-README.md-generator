@@ -75,8 +75,7 @@ function generateMarkdown(data) {
   - [License](#license)
   - [How to Contribute](#how-to-contribute)
   - [Tests](#tests)
-  - [GitHub](#github)
-  - [Email](#email)
+  - [Questions](#questions)
 
   ## Installation
   ${data.install}
