@@ -3,16 +3,16 @@
 
 function renderLicenseBadge(license) {
   let licenseBadge;
-  if (license === 'apache') {
+  if (license === "apache") {
     licenseBadge = `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`;
-  } else if (license === 'gplv3') {
+  } else if (license === "gplv3") {
     licenseBadge = `![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)`;
-  } else if (license === 'mit') {
+  } else if (license === "mit") {
     licenseBadge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
-  } else if (license === 'mozilla') {
+  } else if (license === "mozilla") {
     licenseBadge = `![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)`;
   } else {
-    licenseBadge = '';
+    licenseBadge = "";
   }
   return licenseBadge;
 }
@@ -21,16 +21,16 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   let licenseLink;
-  if (license === 'apache') {
+  if (license === "apache") {
     licenseLink = `[Apache 2.0](https://opensource.org/licenses/Apache-2.0)`;
-  } else if (license === 'gplv3') {
+  } else if (license === "gplv3") {
     licenseLink = `[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)`;
-  } else if (license === 'mit') {
+  } else if (license === "mit") {
     licenseLink = `[MIT](https://opensource.org/licenses/MIT)`;
-  } else if (license === 'mozilla') {
+  } else if (license === "mozilla") {
     licenseLink = `[Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)`;
   } else {
-    licenseLink = '';
+    licenseLink = "";
   }
   return licenseLink;
 }
@@ -39,20 +39,20 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 const renderLicenseSection = (license, licenseBadge, licenseLink) => {
   if (!license) {
-    return ''; // Return an empty string if no license is provided
+    return ""; // Return an empty string if no license is provided
   }
 
   switch (license) {
-    case 'apache':
+    case "apache":
       return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
-    case 'gplv3':
+    case "gplv3":
       return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
-    case 'mit':
+    case "mit":
       return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
-    case 'mozilla':
+    case "mozilla":
       return `This project is licensed under the ${licenseBadge} ${licenseLink} license.`;
     default:
-      return ''; // Return an empty string for unrecognized licenses
+      return ""; // Return an empty string for unrecognized licenses
   }
 };
 
@@ -60,7 +60,11 @@ const renderLicenseSection = (license, licenseBadge, licenseLink) => {
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
   const licenseLink = renderLicenseLink(data.license);
-  const licenseSection = renderLicenseSection(data.license, licenseBadge, licenseLink);
+  const licenseSection = renderLicenseSection(
+    data.license,
+    licenseBadge,
+    licenseLink
+  );
 
   return `# ${data.title}
   ${licenseBadge}

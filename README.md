@@ -1,8 +1,8 @@
 # CLI README.md generator
-  ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
   ## Description
-  This app quickly generates a README.md file using data provided by the user.
+  This is a small application that runs in the command-line interface to quickly generate quality README files.
 
   ## Table of Contents
   - [Installation](#installation)
@@ -11,27 +11,26 @@
   - [License](#license)
   - [How to Contribute](#how-to-contribute)
   - [Tests](#tests)
-  - [GitHub](#github)
-  - [Email](#email)
+  - [Questions](#questions)
 
   ## Installation
-  verify node.js is installed. navigate to the folder that contains the app. type "npm i" to install all dependencies.
+  Download and extract the ZIP file (or clone the repo). In your terminal of choice, navigate to the appropriate directory and install all dependencies with "npm i".
 
   ## Usage
-  run the app by typing "node index.js"
+  Run the program with "node index.js". Fill out all questions as prompted.
 
   ## Credits
-  none
+  Instructor and TA's time was graciously donated :)
 
   ## License
-  This project is licensed under the ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg) [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0) license.
+  This project is licensed under the ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) [MIT](https://opensource.org/licenses/MIT) license.
 
   ## How to Contribute
-  Feel free to download, fork, play, etc
+  Download, fork, play, whatever! Do as you wihs.
 
   ## Tests
-  Run the app to test all functionality.
+  Run the program and check that the resulting README.md file is generated correctly. Re-running the program will overwrite any existing README.md file.
 
   ## Questions? 
   Contact me at
-  [GitHub](https://github.com/k3strl), or email me at: <nunya@business.com>
+  [GitHub](https://github.com/k3strl), or email me at: <nicolas.k.blaize@gmail.com>
