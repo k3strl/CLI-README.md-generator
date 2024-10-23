@@ -33,4 +33,4 @@
 
   ## Questions? 
   Contact me at
-  [GitHub](https://github.com/k3strl), or email me at: <nicolas.k.blaize@gmail.com>
+  [GitHub](https://github.com/k3strl), or email me at: <nic.k.blaize@gmail.com>
