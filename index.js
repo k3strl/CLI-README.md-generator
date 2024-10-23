@@ -40,7 +40,7 @@ const questions = [
   },
   // Prompt for license
   {
-    type: "rawlist",
+    type: "list",
     name: "license",
     message: "Choose the license for the project.",
     choices: [
