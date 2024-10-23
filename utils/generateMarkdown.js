@@ -2,7 +2,6 @@
 // If there is no license, return an empty string
 
 function renderLicenseBadge(license) {
-  console.log('InRenderLicenseBadge', license);
   let licenseBadge;
   if (license === 'apache') {
     licenseBadge = `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`;
@@ -21,7 +20,6 @@ function renderLicenseBadge(license) {
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  console.log('In renderLicenseLink', license);
   let licenseLink;
   if (license === 'apache') {
     licenseLink = `[Apache 2.0](https://opensource.org/licenses/Apache-2.0)`;
@@ -40,7 +38,6 @@ function renderLicenseLink(license) {
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
 const renderLicenseSection = (license, licenseBadge, licenseLink) => {
-  console.log('In renderLicenseSection', license, licenseBadge, licenseLink);
   if (!license) {
     return ''; // Return an empty string if no license is provided
   }
@@ -64,8 +61,6 @@ function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license, licenseBadge, licenseLink);
-
-  console.log('Final destination', licenseBadge, licenseLink, licenseSection);
 
   return `# ${data.title}
   ${licenseBadge}
@@ -101,11 +96,9 @@ function generateMarkdown(data) {
   ## Tests
   ${data.tests}
 
-  ## GitHub
-  [GitHub](https://github.com/${data.github})
-
-  ## Email
-  ${data.email}`;
+  ## Questions? 
+  Contact me at
+  [GitHub](https://github.com/${data.github}), or email me at: <${data.email}>`;
 }
 
 export default generateMarkdown;

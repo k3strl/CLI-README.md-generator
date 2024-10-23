@@ -1,8 +1,8 @@
-# tresvfds
-  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# CLI README.md generator
+  ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 
   ## Description
-  fds
+  This app quickly generates a README.md file using data provided by the user.
 
   ## Table of Contents
   - [Installation](#installation)
@@ -15,25 +15,23 @@
   - [Email](#email)
 
   ## Installation
-  fgdsfds
+  verify node.js is installed. navigate to the folder that contains the app. type "npm i" to install all dependencies.
 
   ## Usage
-  fdsfds
+  run the app by typing "node index.js"
 
   ## Credits
-  3
+  none
 
   ## License
-  This project is licensed under the ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) [MIT](https://opensource.org/licenses/MIT) license.
+  This project is licensed under the ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg) [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0) license.
 
   ## How to Contribute
-  fdsfd
+  Feel free to download, fork, play, etc
 
   ## Tests
-  fdsfds
+  Run the app to test all functionality.
 
-  ## GitHub
-  [GitHub](https://github.com/fdsfds)
-
-  ## Email
-  fdsfds
+  ## Questions? 
+  Contact me at
+  [GitHub](https://github.com/k3strl), or email me at: <nunya@business.com>
