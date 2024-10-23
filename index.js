@@ -2,8 +2,6 @@
 import inquirer from "inquirer";
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
-// import renderLicenseBadge from './utils/generateMarkdown.js';
-import license from "./utils/generateMarkdown.js";
 
 // Create an array of questions for user input
 const questions = [
