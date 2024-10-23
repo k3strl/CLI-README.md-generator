@@ -26,7 +26,7 @@
   This project is licensed under the ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) [MIT](https://opensource.org/licenses/MIT) license.
 
   ## How to Contribute
-  Download, fork, play, whatever! Do as you wihs.
+  Download, fork, play, whatever! Do as you wish.
 
   ## Tests
   Run the program and check that the resulting README.md file is generated correctly. Re-running the program will overwrite any existing README.md file.
